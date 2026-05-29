@@ -1,0 +1,54 @@
+wechat:
+  window_title: 微信
+  poll_interval_min: 2
+  poll_interval_max: 3
+  layout:
+    chat_list_left: 65
+    chat_list_top: 114
+    chat_list_width: 400
+    chat_item_height: 104
+    msg_area_left: 465
+    msg_area_top: 125
+    msg_area_bottom: 158
+    input_left: 475
+    input_top_offset: 110
+ai:
+  engine: ollama
+  openai:
+    api_key: sk-your-api-key-here
+    model: gpt-4o-mini
+    base_url: https://api.openai.com/v1
+    max_tokens: 200
+    temperature: 0.8
+  ollama:
+    base_url: http://localhost:11434
+    model: frob/qwen3.5-instruct:9b
+    max_tokens: 512
+    temperature: 0.7
+  system_prompt: '你是我的微信代聊助手。就像正常社交那样回消息：简短、自然。对方说什么你就顺着说。不要透露自己是AI
+    '
+human:
+  reply_delay_min: 0.5
+  reply_delay_max: 1
+  char_delay_min: 0.05
+  char_delay_max: 0.2
+  pause_threshold: 15
+  pause_delay_min: 0.5
+  pause_delay_max: 1.0
+  thinking_pause_probability: 0.15
+  thinking_pause_min: 1.0
+  thinking_pause_max: 2.0
+schedule:
+  enabled: true
+  work_start: 8
+  work_end: 23
+  per_contact_cooldown: 15
+filters:
+  blocked_keywords:
+  - 微信支付
+  - 腾讯新闻
+  - 订阅号
+  - 服务号
+  - 文件传输助手
+  - 折叠的聊天
+  trigger_keywords: []
